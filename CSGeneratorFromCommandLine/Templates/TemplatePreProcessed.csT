@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using GuidLibrary;
+#parentLibrary#
+
+namespace #namespaceName# 
+{
+	#classGUID#
+	public class #className# #parentClass#
+	{
+#properties#
+    		public #type# #prop# { get; set; }
+		
+		public #className#()
+		{
+			GUID = "#guid#";
+		}
+	}
+}
