@@ -24,10 +24,7 @@ namespace CSGeneratorFromCommandLine
         static void Main(string[] args)
         {
 
-            //Date: 2019. 10. 24. 21:21
-
-            //className
-            log.Debug("path:" + GetAppConfigStringParameter(args[4]));
+            //Date: 2019. 10. 25. 7:24
 
             try
             {
