@@ -24,12 +24,12 @@ namespace CSGeneratorFromCommandLine
         static void Main(string[] args)
         {
 
-            //Date: 2019. 10. 25. 7:24
+            //Date: 2019. 11. 2. 15:36
 
             try
             {
                 //inpput path, language extension, output path, default namespace
-                Program.MainMethod(args[0], args[1], args[2], args[3]);
+                Program.MainMethod(args[0], args[1], args[2]);
             } catch (Exception _exception)
             {
                 log.Error(_exception.Message);
