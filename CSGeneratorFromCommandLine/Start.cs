@@ -22,14 +22,14 @@ namespace CSGeneratorFromCommandLine
         }
 
         static void Main(string[] args)
-        {
+       {
 
-            //Date: 2019. 11. 2. 15:40
+            //Date: 2019. 11. 2. 16:43
 
             try
-            {
+           {
                 //inpput path, language extension, output path, default namespace
-                Program.MainMethod(args[0], args[1], args[2]);
+                 CSGeneratorLibrary.Program.MainMethod("d:\\Server\\Visual_studio\\output_Xmls\\", "d:\\Server\\Visual_studio\\output_Xmls\\", "EmployeeNamespace");
             } catch (Exception _exception)
             {
                 log.Error(_exception.Message);
