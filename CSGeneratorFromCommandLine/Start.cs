@@ -29,7 +29,7 @@ namespace CSGeneratorFromCommandLine
             try
            {
                 //inpput path, language extension, output path, default namespace
-                 CSGeneratorLibrary.Program.MainMethod("d:\\Server\\Visual_studio\\output_Xmls\\", "d:\\Server\\Visual_studio\\output_Xmls\\", "EmployeeNamespace");
+                CSGeneratorLibrary.Program.MainMethod(args[0], args[1], args[2]);
             } catch (Exception _exception)
             {
                 log.Error(_exception.Message);
