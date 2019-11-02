@@ -24,7 +24,7 @@ namespace CSGeneratorFromCommandLine
         static void Main(string[] args)
         {
 
-            //Date: 2019. 11. 2. 15:36
+            //Date: 2019. 11. 2. 15:40
 
             try
             {
