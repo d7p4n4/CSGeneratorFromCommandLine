@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using GuidLibrary;
-#parentLibrary#
+using #namespaceName#.Final.Class;
+//#parentLibrary#
 
-namespace #namespaceName# 
+namespace #namespaceName#.PreProcessed.Class
 {
 	#classGUID#
 	public class #className# #parentClass#

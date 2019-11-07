@@ -25,6 +25,12 @@ namespace CSGeneratorFromCommandLine
        {
 
             //Date: 2019. 11. 2. 16:43
+            Boolean enoughArgs = false;
+
+            if(args.Length == 3)
+            {
+                enoughArgs = true;
+            }
 
             try
            {
@@ -33,6 +39,10 @@ namespace CSGeneratorFromCommandLine
             } catch (Exception _exception)
             {
                 log.Error(_exception.Message);
+                if (!enoughArgs)
+                {
+                    Console.WriteLine("3 argumentumot kell megadnod! (inpath, outpath, namespace név)");
+                }
             }
         }
     }
