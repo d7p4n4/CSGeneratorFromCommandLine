@@ -23,7 +23,7 @@ namespace CSGeneratorFromCommandLine
         static void Main(string[] args)
         {
 
-            //Date: 2019. 11. 09. 15:35
+            //Date: 2019. 11. 09. 18:35
             Boolean enoughArgs = false;
             try { 
 
