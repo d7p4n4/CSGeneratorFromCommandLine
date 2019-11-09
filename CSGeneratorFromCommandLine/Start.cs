@@ -1,4 +1,5 @@
-﻿using CSGeneratorLibrary;
+﻿
+using CSGeneratorLibrary;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,40 +9,42 @@ using System.Threading.Tasks;
 
 namespace CSGeneratorFromCommandLine
 {
-    
+
     class Start
     {
+        private static readonly string APPSETTINGS_NAMESPACE = ConfigurationManager.AppSettings["defaultNamespace"];
+        private static readonly string APPSETTINGS_OUTPATH = ConfigurationManager.AppSettings["outPath"];
+        private static readonly string APPSETTINGS_INPATH = ConfigurationManager.AppSettings["inPath"];
+        private static readonly string APPSETTINGS_TEMPLATES = ConfigurationManager.AppSettings["templatesFolder"];
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        
-        private static string GetAppConfigStringParameter(string name)
-        {
 
-            return ConfigurationManager.AppSettings.Get(name);
-
-        }
 
         static void Main(string[] args)
-       {
+        {
 
-            //Date: 2019. 11. 2. 16:43
+            //Date: 2019. 11. 09. 15:35
             Boolean enoughArgs = false;
+            try { 
 
-            if(args.Length == 3)
-            {
-                enoughArgs = true;
+                if (args.Length == 4)
+                {
+                    enoughArgs = true;
+                    CSGeneratorLibrary.Program.MainMethod(args[0], args[1], args[2], args[3]);
+                } 
+                else if(args.Length == 0)
+                {
+                    enoughArgs = true;
+                    CSGeneratorLibrary.Program.MainMethod(APPSETTINGS_INPATH, APPSETTINGS_OUTPATH, APPSETTINGS_NAMESPACE, APPSETTINGS_TEMPLATES);
+                }
+
             }
-
-            try
-           {
-                //inpput path, language extension, output path, default namespace
-                CSGeneratorLibrary.Program.MainMethod(args[0], args[1], args[2]);
-            } catch (Exception _exception)
+            catch (Exception _exception)
             {
                 log.Error(_exception.Message);
                 if (!enoughArgs)
                 {
-                    Console.WriteLine("3 argumentumot kell megadnod! (inpath, outpath, namespace név)");
+                    Console.WriteLine("Vagy ne írj argumentumot, vagy mind a 4 argumentumot kell megadnod! (inpath, outpath, namespace név, templates mappa)");
                 }
             }
         }
